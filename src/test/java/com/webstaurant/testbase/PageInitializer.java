@@ -4,11 +4,11 @@ import com.webstaurant.pages.MainPageElements;
 
 public class PageInitializer extends BaseClass{
 	
-	protected static MainPageElements webs;
+	protected static MainPageElements mainpg;
 	
 	
 	public static void initializeAllPages() {
-		webs=new MainPageElements();
+		mainpg=new MainPageElements();
 	}
 
 }

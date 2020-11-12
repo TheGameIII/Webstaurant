@@ -18,17 +18,21 @@ public class AssignmentSteps extends Methods {
 	public void go_to(String string) throws InterruptedException {
 		driver.get(ConfigsReader.getProperties("url"));
 		Thread.sleep(1000);
-		Assert.assertTrue("Check Website",mainpg.bannerName.isDisplayed());
 		
 		// driver.findElement(By.xpath("//div[@id='banner-container']/a"))
 	}
 	
 	@When("Search for {string}")
 	public void search_for(String string) {
+		mainpg.searchbar.sendKeys(ConfigsReader.getProperties("text"));
+		mainpg.searchButton.click();
+		
+		/* Bu code locatorlarin direk yazilarak hazirlandigi code
 		WebElement searchbar=driver.findElement(By.xpath("//input[@id='searchval']"));
 		searchbar.sendKeys(ConfigsReader.getProperties("text"));
 		WebElement searchButton=driver.findElement(By.xpath("//button[@value='Search']"));
 		searchButton.click();
+		*/
 	}
 
 	@Then("Check the search result ensuring every product item has the word {string} its title.")

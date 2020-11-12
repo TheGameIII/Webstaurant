@@ -49,15 +49,5 @@ public class MainPageElements extends Methods{
 		PageFactory.initElements(BaseClass.driver,this);
 	}
 	
-	public static void main(String[]args) {
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver=new ChromeDriver();
-		driver.get("http:\\www.webstaurantstore.com");
-		//Assert.assertTrue("Check Website",mainpg.bannerName.isDisplayed());
-		webs.searchbar.sendKeys("table");
-		webs.searchButton.click();
-		driver.quit();
-	}
-	
 	
 }
